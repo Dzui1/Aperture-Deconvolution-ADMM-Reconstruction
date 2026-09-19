@@ -1,0 +1,4 @@
+*.pdf
+*.zip
+venv/
+dbui4/
