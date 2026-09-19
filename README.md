@@ -1,3 +1,27 @@
+Aperture Deconvolution & ADMM Reconstruction
+
+This project explores computational imaging by reconstructing scenes captured through non-standard, multiplexed apertures (such as slits, pinholes, and multi-hole masks). Using Point Spread Function (PSF) calibration, the system formulates image recovery as an inverse problem solved via the Alternating Direction Method of Multipliers (ADMM). 
+
+
+**Table of Contents**
+
+**1. Optimization & Reconstruction Algorithms**
+
+* **1.1 & 1.2.1 Data Setup:** Preprocessing, PSF calibration, padding, and Total Variation (TV) background.
+* **1.2.2 ADMM with $L_1$ Regularization:** Sparse feature recovery via soft thresholding.
+* **1.2.3 ADMM with $L_2$ Regularization:** Smooth reconstruction via Tikhonov shrinkage.
+* **1.3.1 PnP ADMM (Closed Formula):** Fourier-domain closed-form inversion with BM3D denoising.
+* **1.3.2 PnP ADMM (Conjugate Gradient):** Conjugate Gradient solver combined with spatial BM3D denoising.
+* **Reconstruction Comparison:** Benchmark evaluation of $L_1$, $L_2$, and PnP BM3D methods.
+
+**2. Physical Camera Experiments & Calibration**
+
+* **2.2 Standard Pinhole Camera:** Light collection efficiency vs. blur across aperture sizes.
+* **2.3 Non-Standard Aperture Capture:** Physical setup and star target capture using a vertical slit aperture.
+* **2.4 PSF Calibration:** Point Spread Function mapping for pinhole, multi-hole, and slit masks.
+* **2.5 ADMM Multiplexed Reconstruction:** Parametric tuning ($\rho$, $\lambda$) for star image recovery under $L_1$, $L_2$, and PnP BM3D.
+
+
 # 1.1 & 1.2.1: Data Loading, Preprocessing, and System Setup {#data-loading-preprocessing-and-system-setup .unnumbered}
 
 The raw DiffuserCam sensor measurement and Point Spread Function (PSF)
